@@ -14,7 +14,9 @@ class FrontendController extends Controller
     public function index(){
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
 
-        return view('Frontend.index')->with('category',$cate_product);
+        $all_product = DB::table('tbl_product')->where('product_status','0')->orderby('product_id','desc')->limit(4)->get();
+
+        return view('Frontend.index')->with('category',$cate_product)->with('all_product',$all_product);
     }
     public function cart()
     {
