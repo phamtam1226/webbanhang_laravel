@@ -43,20 +43,34 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </th>
-                        <th>Tên danh mục</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Hình sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Tác giả</th>
+                        <th>Nhà xuất bản</th>
+                        <th>Mô tả</th>
+                        <th>Nội dung</th>
+                        <th>Danh mục</th>
                         <th>Hiển thị</th>
 
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($all_category_product as $key => $cate_pro)
+                    @foreach($all_product as $key => $pro)
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                        <td>{{$cate_pro->category_name}}</td>
+                        <td>{{$pro->product_name}}</td>
+                        <td><img src="../uploads/product/{{$pro->product_image}}" height="100" width="100"></td>
+                        <td>{{$pro->product_price}}</td>
+                        <td>{{$pro->product_tacgia}}</td>
+                        <td>{{$pro->product_nxb}}</td>
+                        <td>{{$pro->product_desc}}</td>
+                        <td>{{$pro->product_content}}</td>
+                        <td>{{$pro->category_name}}</td>
                         <td><span class="text-ellipsis">
                                 <?php
-                                if ($cate_pro->category_status == 1) {
+                                if ($pro->product_status == 1) {
                                     echo 'Ẩn';
                                 } else {
                                     echo 'Hiển thị';
@@ -65,10 +79,10 @@
                             </span></td>
 
                         <td>
-                            <a href="{{URL::to('/edit_category_product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                            <a href="{{URL::to('/edit_product/'.$pro->product_id)}}" class="active" ui-toggle-class="">
                                 <i class="fa fa-pencil-square-o text-success text-active"></i>
                             </a>
-                            <a onclick="return confirm('Bạn muốn xóa')" href="{{URL::to('/delete_category_product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                            <a onclick="return confirm('Bạn muốn xóa')" href="{{URL::to('/delete_product/'.$pro->product_id)}}" class="active" ui-toggle-class="">
 
                                 <i class="fa fa-times text-danger text"></i></a>
                         </td>

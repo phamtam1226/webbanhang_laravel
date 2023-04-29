@@ -20,7 +20,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên danh mục</label>
-                            <input type="text" value="{{$edit_value->category_name}}" name="category_product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên danh mục">
+                            <input type="text" value="{{$edit_value->category_name}}" name="category_product_name" class="form-control" id="exampleInputEmail1" >
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả danh mục</label>
@@ -29,15 +29,14 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hiển thị</label>
                             <select name="category_product_status" class="form-control input-sm m-bot15">
-                            <?php
-                                if ($edit_value->category_status == 0) {
-                                    echo 'Ẩn';
-                                } else {
-                                    echo 'Hiển thị';
-                                }
-                                ?>
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                            @if($edit_value->category_product_status==1)
+                                    <option selcected value="1">Ẩn</option>
+                                    <option value="0">Hiển thị</option>
+                                @else
+                                      <option value="0">Hiển thị</option>
+                                    <option value="1">Ẩn</option>
+                                   
+                                @endif
                             </select>   
                         </div>
 

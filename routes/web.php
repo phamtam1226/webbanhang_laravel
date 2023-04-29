@@ -3,6 +3,7 @@
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,14 @@ Route::get('/all_category_product',[CategoryProduct::class,'all_category_product
 Route::get('/edit_category_product/{category_product_id}',[CategoryProduct::class,'edit_category_product'])->name('edit_category_product');
 Route::get('/delete_category_product/{category_product_id}',[CategoryProduct::class,'delete_category_product'])->name('delete_category_product');
 
-
 Route::post('/save_category_product',[CategoryProduct::class,'save_category_product'])->name('save_category_product');
 Route::post('/update_category_product/{category_product_id}',[CategoryProduct::class,'update_category_product'])->name('update_category_product');
+
+//Product
+Route::get('/add_product',[ProductController::class,'add_product'])->name('add_product');
+Route::get('/all_product',[ProductController::class,'all_product'])->name('all_product');
+Route::get('/edit_product/{product_id}',[ProductController::class,'edit_product'])->name('edit_product');
+Route::get('/delete_product/{product_id}',[ProductController::class,'delete_product'])->name('delete_product');
+
+Route::post('/save_product',[ProductController::class,'save_product'])->name('save_product');
+Route::post('/update_product/{product_id}',[ProductController::class,'update_product'])->name('update_product');
