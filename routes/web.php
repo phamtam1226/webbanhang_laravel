@@ -29,4 +29,6 @@ Route::get('/single',[FrontendController::class,'single'])->name('single');
 
 Route::get('/admin',[BackendController::class,'index'])->name('index');
 Route::get('/dashboard',[BackendController::class,'show_dashboard'])->name('show_dashboard');
+Route::get('/logout',[BackendController::class,'logout'])->name('logout');
+
 Route::post('/admin-dashboard',[BackendController::class,'dashboard'])->name('dashboard');
