@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <head>
 <title>Trang quản lý admin</title>
-<base href="backend/">
+<base href="../backend/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -95,8 +95,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Danh mục sản phẩm</span>
                     </a>
                     <ul class="sub">
-						<li><a href="typography.html">Thêm danh mục</a></li>
-						<li><a href="glyphicon.html">Liệt kê danh mục</a></li>
+						<li><a href="{{URL::to('/add_category_product')}}">Thêm danh mục sản phẩm</a></li>
+						<li><a href="{{URL::to('/all_category_product')}}">Liệt kê danh mục sản phẩm</a></li>
                    
                     </ul>
                 </li>s    
