@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\BackendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//Frontend
 Route::get('/',[FrontendController::class,'index'])->name('index');
 Route::get('cart',[FrontendController::class,'cart'])->name('cart');
 Route::get('/single',[FrontendController::class,'single'])->name('single');
+
+
+//Backend
+
+Route::get('/admin',[BackendController::class,'index'])->name('index');
+Route::get('/dashboard',[BackendController::class,'show_dashboard'])->name('show_dashboard');
+Route::post('/admin-dashboard',[BackendController::class,'dashboard'])->name('dashboard');
