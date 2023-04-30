@@ -36,12 +36,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-2 col-md-6 col-xs-6">
-                        <a href="index-2.html" class="biolife-logo"><img src="assets/images/sach_logo.jpg" alt="biolife logo" width="135" height="34"></a>
+                        <a href="{{URL::to('/')}}" class="biolife-logo"><img src="assets/images/sach_logo.jpg" alt="biolife logo" width="135" height="34" ></a>
+                        <h1 class="page-title">Cửa hàng sách</h1>
                     </div>
                     <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
                         <div class="primary-menu">
                         <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
-                            <li class="menu-item"><a href="index-2.html">Trang chủ </a></li>
+                            <li class="menu-item"><a href="{{URL::to('/')}}">Trang chủ </a></li>
                         
                             <li class="menu-item menu-item-has-children has-child">
                                 <a href="#" class="menu-name" data-title="Products">Sản phẩm</a>
@@ -114,7 +115,7 @@
                                                 </li>
                                             </ul>
                                             <p class="btn-control">
-                                                <a href="#" class="btn view-cart">Xem gỏi hàng</a>
+                                                <a href="{{URL::to('/save_cart')}}" class="btn view-cart">Xem gỏi hàng</a>
                                                 <a href="#" class="btn">Thanh toán</a>
                                             </p>
                                         </div>
@@ -150,9 +151,10 @@
                             <div class="wrap-menu">
                                 <ul class="menu clone-main-menu">
                                     @foreach($category as $key => $cate)
-                                    <li class="menu-item"><a href="{{URL::to('/danhmuc_sanpham/'.$cate->category_id)}}" class="menu-title">{{$cate->category_name}}</a></li>
+                                         <li class="menu-item"><a href="{{URL::to('/danh_muc_san_pham/'.$cate->category_id)}}" class="menu-title">{{$cate->category_name}}</a></li>
                                     
                                     @endforeach
+                                    
                                 </ul>
                             </div>
                         </div>

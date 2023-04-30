@@ -64,4 +64,13 @@ class CategoryProduct extends Controller
         return Redirect::to('all_category_product');
     }
 
+    //End function Admin Page
+    public function show_category_home($category_id){
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+      
+        $category_by_id= DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->where('tbl_product.category_id',$category_id)->get();
+       
+        return view('Frontend.pages.show_category')->with('category',$cate_product)->with('category_by_id',$category_by_id); 
+    }
+
 }

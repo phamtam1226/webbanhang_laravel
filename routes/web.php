@@ -4,6 +4,8 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +26,11 @@ use Illuminate\Support\Facades\Route;
 //Frontend
 Route::get('/',[FrontendController::class,'index'])->name('index');
 Route::get('cart',[FrontendController::class,'cart'])->name('cart');
-Route::get('/single',[FrontendController::class,'single'])->name('single');
+//Danh muc trang chu
+Route::get('/danh_muc_san_pham/{category_id}',[CategoryProduct::class,'show_category_home'])->name('show_category_home');
+//san pham chi tiet
+Route::get('/chi_tiet_san_pham/{product_id}',[ProductController::class,'details_product'])->name('details_product');
+//cart
 
 
 //Backend
@@ -53,3 +59,6 @@ Route::get('/delete_product/{product_id}',[ProductController::class,'delete_prod
 
 Route::post('/save_product',[ProductController::class,'save_product'])->name('save_product');
 Route::post('/update_product/{product_id}',[ProductController::class,'update_product'])->name('update_product');
+
+//cartc
+Route::post('/save_cart',[CartController::class,'save_cart'])->name('save_cart');

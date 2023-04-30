@@ -9,8 +9,8 @@
 <div class="container">
     <nav class="biolife-nav">
         <ul>
-            <li class="nav-item"><a href="index-2.html" class="permal-link">Home</a></li>
-            <li class="nav-item"><span class="current-page">ShoppingCart</span></li>
+            <li class="nav-item"><a href="{{URL::to('/')}}" class="permal-link">Home</a></li>
+            <li class="nav-item"><span class="current-page">Giỏ hàng</span></li>
         </ul>
     </nav>
 </div>
@@ -21,35 +21,7 @@
     <div id="main-content" class="main-content">
         <div class="container">
 
-            <!--Top banner-->
-            <div class="top-banner background-top-banner-for-shopping min-height-346px">
-                <h3 class="title">Save $50!*</h3>
-                <p class="subtitle">Save $50 when you open an account online & spen $50 on your first online purchase to day</p>
-                <ul class="list">
-                    <li>
-                        <div class="price-less">
-                            <span class="desc">Purchase amount</span>
-                            <span class="cost">$0.00</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="price-less">
-                            <span class="desc">Credit on billing statement</span>
-                            <span class="cost">$0.00</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="price-less sum">
-                            <span class="desc">Cost affter statemen credit</span>
-                            <span class="cost">$0.00</span>
-                        </div>
-                    </li>
-                </ul>
-                <p class="btns">
-                    <a href="#" class="btn">Open Account</a>
-                    <a href="#" class="btn">Learn more</a>
-                </p>
-            </div>
+         
 
             <!--Cart Table-->
             <div class="shopping-cart-container">
@@ -60,10 +32,10 @@
                             <table class="shop_table cart-form">
                                 <thead>
                                 <tr>
-                                    <th class="product-name">Product Name</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-name">Tên sản phẩm</th>
+                                    <th class="product-price">Giá</th>
+                                    <th class="product-quantity">Số lượng</th>
+                                    <th class="product-subtotal">Tổng tiền</th>
                                 </tr>
                                 </thead>
                                 <tbody>

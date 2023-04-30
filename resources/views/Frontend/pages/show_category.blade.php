@@ -13,7 +13,7 @@
         <!--Block 02: Banner-->
         <div class="special-slide">
             <div class="container">
-                <ul class="biolife-carousel dots_ring_style" data-slick='{"arrows": false, "dots": true, "slidesMargin": 30, "slidesToShow": 1, "infinite": true, "speed": 800, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 1}},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":20, "dots": false}},{"breakpoint":480, "settings":{ "slidesToShow": 1}}]}' >
+                <ul class="biolife-carousel dots_ring_style" data-slick='{"arrows": false, "dots": true, "slidesMargin": 30, "slidesToShow": 1, "infinite": true, "speed": 800, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 1}},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":20, "dots": false}},{"breakpoint":480, "settings":{ "slidesToShow": 1}}]}'>
                     <li>
                         <div class="slide-contain biolife-banner__special">
                             <div class="banner-contain">
@@ -40,18 +40,18 @@
                             </div>
                         </div>
                     </li>
-                
-                    
-                    
+
+
+
                 </ul>
                 <div class="biolife-service type01 biolife-service__type01 sm-margin-top-0 xs-margin-top-45px">
-            
+
                     <ul class="services-list">
                         <li>
                             <div class="service-inner">
                                 <span class="number">1</span>
                                 <span class="biolife-icon icon-beer"></span>
-                                <p class="srv-name" >Sản phảm chất lượng</p>
+                                <p class="srv-name">Sản phảm chất lượng</p>
                             </div>
                         </li>
                         <li>
@@ -75,17 +75,18 @@
         <!--Block 03: Product Tab-->
         <div class="product-tab z-index-20 sm-margin-top-193px xs-margin-top-30px">
             <div class="container">
+                @foreach($category_by_id as $key => $product)
                 <div class="biolife-title-box">
                     <span class="subtitle">Tất cả các mặt hàng tốt nhất cho bạn</span>
-                    <h3 class="main-title">Sách Mới Nhất</h3>
+                    <h3 class="main-title">{{$product->category_name}}</h3>
                 </div>
                 <div class="biolife-tab biolife-tab-contain sm-margin-top-34px">
-                    
+
                     <div class="tab-content">
                         <div id="tab01_1st" class="tab-contain active">
                             <ul class="products-list biolife-carousel nav-center-02 nav-none-on-mobile eq-height-contain" data-slick='{"rows":2 ,"arrows":true,"dots":false,"infinite":true,"speed":400,"slidesMargin":10,"slidesToShow":4, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 4}},{"breakpoint":992, "settings":{ "slidesToShow": 3, "slidesMargin":25 }},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":15}}]}'>
-                            @foreach($all_product as $key => $product)
-                            <li class="product-item">
+
+                                <li class="product-item">
                                     <div class="contain-product layout-default">
                                         <div class="product-thumb">
                                             <a href="{{URL::to('/chi_tiet_san_pham/'.$product->product_id)}}" class="link-to-product">
@@ -93,9 +94,8 @@
                                             </a>
                                         </div>
                                         <div class="info">
-                                            
                                             <h4 class="product-title"><a href="#" class="pr-name">{{$product->product_name}}</a></h4>
-                                           <!-- <b class="categories">{{$product->product_name}}</b>-->
+                                            <!-- <b class="categories">{{$product->product_name}}</b>-->
                                             <div class="price ">
                                                 <ins><span class="price-amount">{{$product->product_price}}<span class="currencySymbol"> VND</span></span></ins>
                                                 <!--<del><span class="price-amount"><span class="currencySymbol">VND</span>95.00</span></del>-->
@@ -111,16 +111,15 @@
                                         </div>
                                     </div>
                                 </li>
-                            @endforeach
-                                
-                                
-                                
+
+
                             </ul>
-                        </div>    
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
-@endsection
+    </div>
+    @endsection
