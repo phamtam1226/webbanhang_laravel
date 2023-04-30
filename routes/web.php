@@ -5,6 +5,7 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -66,3 +67,11 @@ Route::get('/cart',[CartController::class,'cart'])->name('cart');
 Route::get('/delete_cart/{rowId}',[CartController::class,'delete_cart'])->name('delete_cart');
 Route::get('/delete_all_cart',[CartController::class,'delete_all_cart'])->name('delete_all_cart');
 Route::post('/update_cart/{rowId}',[CartController::class,'update_cart'])->name('update_cart');
+
+//Checkout
+Route::get('/login_checkout',[CheckoutController::class,'login_checkout'])->name('login_checkout');
+Route::post('/add_customer',[CheckoutController::class,'add_customer'])->name('add_customer');
+Route::get('/checkout',[CheckoutController::class,'checkout'])->name('checkout');
+Route::post('/save_checkout',[CheckoutController::class,'save_checkout'])->name('save_checkout');
+Route::get('/payment',[CheckoutController::class,'payment'])->name('payment');
+
