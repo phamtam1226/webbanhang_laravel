@@ -27,4 +27,13 @@ class FrontendController extends Controller
     {
         return view('Frontend.pages.single');
     }
+    public function search(Request $request)
+    {   
+        $keywords = $request->keywords_submit;
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+        
+        $search_product = DB::table('tbl_product')->where('product_name','like','%'.$keywords.'%')->get();
+
+        return view('Frontend.pages.search')->with('category',$cate_product)->with('search_product',$search_product);
+    }
 }

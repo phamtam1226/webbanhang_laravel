@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 //Frontend
 Route::get('/',[FrontendController::class,'index'])->name('index');
 Route::get('cart',[FrontendController::class,'cart'])->name('cart');
+Route::get('/tim_kiem',[FrontendController::class,'search'])->name('search');
+
 //Danh muc trang chu
 Route::get('/danh_muc_san_pham/{category_id}',[CategoryProduct::class,'show_category_home'])->name('show_category_home');
 //san pham chi tiet

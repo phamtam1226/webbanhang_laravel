@@ -77,7 +77,7 @@
                                     <?php
                                     } else {
                                     ?>
-                                        <li><a href="{{URL::to('/login_checkout')}}" class="login-link"><i class="biolife-icon icon-login"></i>Đăng nhập/Đăng ký</a></li>
+                                        <li><a href="{{URL::to('/login_checkout')}}" class="login-link"></i>Thanh toán</a></li>
                                     <?php
                                     }
                                     ?> 
@@ -90,13 +90,10 @@
                         <div class="mobile-search">
                             <a href="javascript:void(0)" class="open-searchbox"><i class="biolife-icon icon-search"></i></a>
                             <div class="mobile-search-content">
-                                <form action="#" class="form-search" name="mobile-seacrh" method="get">
-                                    <a href="#" class="btn-close"><span class="biolife-icon icon-close-menu"></span></a>
-                                    <input type="text" name="s" class="input-text" value="" placeholder="Tìm kiếm...">
-                                    <select name="category">
-                                        <option value="-1" selected>All Categories</option>
-                                        <option value="vegetables">Vegetables</option>
-                                    </select>
+                                <form action="" class="form-search" name="mobile-seacrh" method="post">
+                                    <a href="{{URL::to('/tim_kiem')}}" class="btn-close"><span class="biolife-icon icon-close-menu"></span></a>
+                                    <input type="text" name="keywords_submit" class="input-text" value="" placeholder="Tìm kiếm...">
+                                   
                                     <button type="submit" class="btn-submit">go</button>
                                 </form>
                             </div>
@@ -191,13 +188,9 @@
                 </div>
                 <div class="col-lg-9 col-md-8 padding-top-2px">
                     <div class="header-search-bar layout-01">
-                        <form action="#" class="form-search" name="desktop-seacrh" method="get">
-                            <input type="text" name="s" class="input-text" value="" placeholder="Search here...">
-                            <select name="category">
-                                <option value="-1" selected>All Categories</option>
-                                <option value="vegetables">Vegetables</option>
-
-                            </select>
+                        <form action="{{URL::to('/tim_kiem')}}" class="form-search" name="desktop-seacrh" method="get">
+                            <input type="text" name="keywords_submit" class="input-text" value="" placeholder="Tìm kiếm...">
+                            
                             <button type="submit" class="btn-submit"><i class="biolife-icon icon-search"></i></button>
                         </form>
                     </div>
